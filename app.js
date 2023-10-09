@@ -24,16 +24,7 @@ ConnectDB();
 
 app.use(bodyParser.json({ limit: "50mb" }));
 
-// Cấu hình CORS
-app.use(
-  cors({
-    origin: "*", // Đặt giá trị này thành tên miền của ứng dụng React Native hoặc '*' để cho phép từ mọi tên miền
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-    optionsSuccessStatus: 200,
-    allowedHeaders: ["Content-Type", "Authorization"], // Các tiêu đề được phép
-  })
-);
+app.use(cors());
 
 app.use(morgan("common"));
 app.use("/Xe", xeRoutes);
@@ -41,3 +32,5 @@ app.use("/Xe", xeRoutes);
 app.listen(process.env.PORT, () => {
   console.log("Server is running");
 });
+
+module.exports = app;
