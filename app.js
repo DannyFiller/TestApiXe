@@ -36,7 +36,7 @@ app.use(
 );
 
 app.use(morgan("common"));
-app.use("/.nettlify/functions/Xe", xeRoutes);
+app.use("/Xe", xeRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running");
