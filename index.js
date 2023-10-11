@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const xeRoutes = require("./Routes/Xe");
+const adminRoutes = require("./Routes/Admin");
 dotenv.config();
 
 // Kết nối CSDL
@@ -28,6 +29,7 @@ app.use(cors());
 
 app.use(morgan("common"));
 app.use("/Xe", xeRoutes);
+app.use("/Admin", adminRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running");

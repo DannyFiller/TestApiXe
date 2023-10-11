@@ -32,5 +32,39 @@ const XeSchema=new mongoose.Schema(
     }
 })
 
+const QuanLiSchema=new mongoose.Schema({
+    TenTaiKhoan:{
+        type:String,
+        required:true
+    },
+    MatKhau:{
+        type:String,
+        required:true
+    },
+    Ten:{
+        type:String,
+        required:true
+    },
+    GioiTinh:{
+        type:Boolean,
+        required:true
+    },
+    DiaChi:{
+        type:String,
+        required:true
+    },
+    SoDienThoai:{
+        type:String,
+        required:true
+    },
+    CCCD:{
+        type:String,
+        required:true
+    },
+    BangLaiXe:{
+        type:String
+    }
+})
+let QuanLi=mongoose.model("QuanLi",QuanLiSchema);
 let Xe=mongoose.model("Xe",XeSchema);
-module.exports={Xe};
+module.exports={Xe,QuanLi};
