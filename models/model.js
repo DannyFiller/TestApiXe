@@ -31,7 +31,69 @@ const XeSchema=new mongoose.Schema(
         type:String
     }
 })
+const KhachHangSchema=new mongoose.Schema({
+    TenTaiKhoan:{
+        type:String,
+        required:true
+    },
+    MatKhau:{
+        type:String,
+        required:true
+    },
+    Ten:{
+        type:String,
+        required:true
+    },
+    GioiTinh:{
+        type:Boolean,
+        required:true
+    },
+    DiaChi:{
+        type:String,
+        required:true
+    },
+    SoDienThoai:{
+        type:String,
+        required:true
+    },
+    CCCD:{
+        type:String,
+        required:true
+    },
+    BangLaiXe:{
+        type:String
+    }
+})
+const SoXeSchema=new mongoose.Schema({
+    KhachHang:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"KhachHang"
+    },
+    Xe:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Xe"
+    },
+    NgayThueXe:{
+        type:Date,
+        required:true
+    },
+    NgayTraXe:{
+        type:Date,
+        required:true
+    },
+    GiaThue:{
+        type:Number
+    },
+    NgayKiHopDong:{
+        type:Date,
+        required:true
+    },
+    TinhTrang:{
+        type:String,
+        required:true
 
+    },
+})
 const QuanLiSchema=new mongoose.Schema({
     TenTaiKhoan:{
         type:String,
@@ -67,4 +129,6 @@ const QuanLiSchema=new mongoose.Schema({
 })
 let QuanLi=mongoose.model("QuanLi",QuanLiSchema);
 let Xe=mongoose.model("Xe",XeSchema);
-module.exports={Xe,QuanLi};
+let KhachHang=mongoose.model("KhachHang",KhachHangSchema);
+let SoXe=mongoose.model("SoXe",SoXeSchema);
+module.exports={Xe,QuanLi,KhachHang,SoXe};

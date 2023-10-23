@@ -19,25 +19,8 @@ const xeController={
             res.status(500).json(err);
         }
     },
-    getBangGia:async(req,res)=>{
-        try{
-            const BangGia=await Xe.aggregate([
-                {
-                  $group: {
-                    _id: {
-                      LoaiXe: "$LoaiXe",
-                      HangXe: "$HangXe",
-                      DoiXe: "$DoiXe",
-                      GiaThue: "$GiaThue",
-                    },
-                  },
-                },
-              ])
-            res.status(200).json(BangGia);
-        }catch(err){
-            res.status(500).json(err);
-        }
-    },
+    
+    
     updateXe:async(req,res)=>{
         try{
             const xe=await Xe.findById(req.params.id);
