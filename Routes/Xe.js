@@ -1,4 +1,4 @@
-const xeController = require("../controllers/xeController");
+const xeController = require("../Controllers/XeController");
 
 const router = require("express").Router();
 
