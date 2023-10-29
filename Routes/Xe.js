@@ -1,8 +1,19 @@
+const xeController = require("../controllers/xeController");
 
-const xeController=require("../Controllers/XeController");
-const router=require("express").Router();
+const router = require("express").Router();
 
-//Them xe
+//Thêm xe
 router.post("/",xeController.addXe);
+//lấy tất cả xe
 router.get("/",xeController.getAllXe);
-module.exports=router;
+//lấy 1 xe
+router.get("/:tenxe",xeController.getXe);
+//xóa xe
+router.delete("/:id",xeController.deleteXe);
+//sửa thông tin xe
+router.put("/:id",xeController.updateXe);
+//search theo loại xe
+router.get("/LoaiXe/:loaixe",xeController.getLoaiXe);
+//lay loai xe
+
+module.exports = router;

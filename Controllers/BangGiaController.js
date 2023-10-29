@@ -1,4 +1,4 @@
-const {Xe}=require("../models/model");
+const {Xe}=require("../model/model");
 
 const bangGiaController={
     locTheoLoai: async (req, res) => {

@@ -29,6 +29,9 @@ const XeSchema=new mongoose.Schema(
     },
     MauXe:{
         type:String
+    },
+    HinhAnh:{
+        type:String
     }
 })
 const KhachHangSchema=new mongoose.Schema({
@@ -127,8 +130,35 @@ const QuanLiSchema=new mongoose.Schema({
         type:String
     }
 })
+
+const SoDatXeSchema=new mongoose.Schema({
+    MaSo:{
+        type:String,
+        required:true
+    },
+    TenTaiKhoan:{
+        type:String,
+        required:true
+    },
+    BienSoXe:{
+        type:String,
+        required:true
+    },
+    NgayThueXe:{
+        type:Date,
+        required:true
+    },
+    NgayTraXe:{
+        type:Date,
+        required:true
+    },
+    GiaThue:{
+        type:Number
+    },
+})
 let QuanLi=mongoose.model("QuanLi",QuanLiSchema);
 let Xe=mongoose.model("Xe",XeSchema);
 let KhachHang=mongoose.model("KhachHang",KhachHangSchema);
 let SoXe=mongoose.model("SoXe",SoXeSchema);
-module.exports={Xe,QuanLi,KhachHang,SoXe};
+let SoDatXe=mongoose.model("SoDatXe",SoDatXeSchema);
+module.exports={Xe,QuanLi,KhachHang,SoXe,SoDatXe};

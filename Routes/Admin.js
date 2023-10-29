@@ -1,4 +1,4 @@
-const quanLiController=require("../Controllers/QuanLiController");
+const quanLiController=require("../controllers/QuanLiController");
 const router=require("express").Router();
 
 //Them xe

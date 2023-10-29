@@ -1,4 +1,4 @@
-const KhachHangController=require("../Controllers/KhachHangController")
+const KhachHangController=require("../controllers/KhachHangController")
 const router=require("express").Router();
 
 router.post("/",KhachHangController.addKhachHang);
