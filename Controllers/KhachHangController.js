@@ -1,4 +1,4 @@
-const {KhachHang}=require('../models/model');
+const {KhachHang}=require('../model/model');
 
 const KhachHangController={
     addKhachHang:async(req,res)=>{

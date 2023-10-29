@@ -1,4 +1,4 @@
-const {QuanLi}=require("../models/model")
+const {QuanLi}=require("../model/model")
 
 const quanLiController={
     addAccount:async(req,res)=>{
