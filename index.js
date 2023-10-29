@@ -11,7 +11,7 @@ const xeRoutes = require("./Routes/Xe");
 const bangGiaRoutes = require("./Routes/BangGia");
 // const SoDatXeRouter = require("./routes/sodatxe");
 // const soXeRoutes=require("./Routes/SoXe");
-// const KhachHang=require("./Routes/KhachHang");
+const KhachHang=require("./Routes/KhachHang");
 // const LoaiXe=require("./Routes/LoaiXe");
 
 dotenv.config();
@@ -38,7 +38,7 @@ app.use(morgan("common"));
 app.use("/Xe", xeRoutes);
 // app.use("/Admin", adminRoutes);
 app.use("/BangGia", bangGiaRoutes);
-// app.use("/KhachHang",KhachHang);
+app.use("/KhachHang",KhachHang);
 // app.use("/SoXe",soXeRoutes);
 // app.use("/LoaiXe",LoaiXe);
 // app.use("/SoDatXe",SoDatXeRouter);
