@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 
 const xeRoutes = require("./Routes/Xe");
 // const adminRoutes = require("./Routes/Admin");
-// const bangGiaRoutes = require("./Routes/BangGia");
+const bangGiaRoutes = require("./Routes/BangGia");
 // const SoDatXeRouter = require("./routes/sodatxe");
 // const soXeRoutes=require("./Routes/SoXe");
 // const KhachHang=require("./Routes/KhachHang");
@@ -37,7 +37,7 @@ app.use(cors());
 app.use(morgan("common"));
 app.use("/Xe", xeRoutes);
 // app.use("/Admin", adminRoutes);
-// app.use("/BangGia", bangGiaRoutes);
+app.use("/BangGia", bangGiaRoutes);
 // app.use("/KhachHang",KhachHang);
 // app.use("/SoXe",soXeRoutes);
 // app.use("/LoaiXe",LoaiXe);

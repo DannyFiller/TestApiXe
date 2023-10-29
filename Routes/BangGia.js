@@ -1,4 +1,4 @@
-const bangGiaController=require("../controllers/BangGiaController")
+const bangGiaController=require("../Controllers/BangGiaController")
 const router=require("express").Router();
 
 router.get("/",bangGiaController.getBangGia);
