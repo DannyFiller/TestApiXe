@@ -10,7 +10,7 @@ const xeRoutes = require("./Routes/Xe");
 const adminRoutes = require("./Routes/Admin");
 const bangGiaRoutes = require("./Routes/BangGia");
 // const SoDatXeRouter = require("./routes/sodatxe");
-// const soXeRoutes=require("./Routes/SoXe");
+const soXeRoutes=require("./Routes/SoXe");
 const KhachHang=require("./Routes/KhachHang");
 const LoaiXe=require("./Routes/LoaiXe");
 
@@ -39,7 +39,7 @@ app.use("/Xe", xeRoutes);
 app.use("/Admin", adminRoutes);
 app.use("/BangGia", bangGiaRoutes);
 app.use("/KhachHang",KhachHang);
-// app.use("/SoXe",soXeRoutes);
+app.use("/SoXe",soXeRoutes);
 app.use("/LoaiXe",LoaiXe);
 // app.use("/SoDatXe",SoDatXeRouter);
 

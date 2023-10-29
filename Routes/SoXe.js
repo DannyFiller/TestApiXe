@@ -1,4 +1,4 @@
-const SoXeController=require("../controllers/SoXeController");
+const SoXeController=require("../Controllers/SoXeController");
 const router=require("express").Router();
 
 //Them xe
