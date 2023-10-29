@@ -1,4 +1,4 @@
-const LoaiXeController=require("../controllers/LoaiXeController");
+const LoaiXeController=require("../Controllers/LoaiXeController");
 
 const router=require("express").Router();
 

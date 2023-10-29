@@ -12,7 +12,7 @@ const bangGiaRoutes = require("./Routes/BangGia");
 // const SoDatXeRouter = require("./routes/sodatxe");
 // const soXeRoutes=require("./Routes/SoXe");
 const KhachHang=require("./Routes/KhachHang");
-// const LoaiXe=require("./Routes/LoaiXe");
+const LoaiXe=require("./Routes/LoaiXe");
 
 dotenv.config();
 
@@ -40,7 +40,7 @@ app.use("/Xe", xeRoutes);
 app.use("/BangGia", bangGiaRoutes);
 app.use("/KhachHang",KhachHang);
 // app.use("/SoXe",soXeRoutes);
-// app.use("/LoaiXe",LoaiXe);
+app.use("/LoaiXe",LoaiXe);
 // app.use("/SoDatXe",SoDatXeRouter);
 
 app.listen(process.env.PORT, () => {
