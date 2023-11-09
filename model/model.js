@@ -145,16 +145,19 @@ const SoDatXeSchema=new mongoose.Schema({
         required:true
     },
     NgayThueXe:{
-        type:Date,
+        type:String,
         required:true
     },
     NgayTraXe:{
-        type:Date,
+        type:String,
         required:true
     },
     GiaThue:{
         type:Number
     },
+    HinhAnh:{
+        type:String
+    }
 })
 let QuanLi=mongoose.model("QuanLi",QuanLiSchema);
 let Xe=mongoose.model("Xe",XeSchema);
