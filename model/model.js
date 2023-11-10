@@ -136,13 +136,13 @@ const SoDatXeSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    TenTaiKhoan:{
-        type:String,
-        required:true
+    KhachHang:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"KhachHang"
     },
-    BienSoXe:{
-        type:String,
-        required:true
+    Xe:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Xe"
     },
     NgayThueXe:{
         type:String,
