@@ -43,7 +43,6 @@ const bangGiaController={
                   _id: {
                     LoaiXe: "$LoaiXe",
                     HangXe: "$HangXe",
-                    DoiXe: "$DoiXe",
                     GiaThue: "$GiaThue",
                   },
                 },
