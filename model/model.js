@@ -2,7 +2,11 @@ const mongoose=require("mongoose");
 
 const XeSchema=new mongoose.Schema(
     {
-    BienSoXe:{
+    IDXe:{
+        type:String,
+        required:true
+    },
+    BienSo:{
         type:String,
         required:true
     },
@@ -10,91 +14,100 @@ const XeSchema=new mongoose.Schema(
         type:String,
         required:true
     },
-    LoaiXe:{
-        type:String,
+    SoCho:{
+        type:Number,
         required:true
     },
-    TinhTrang:{
+    TruyenDong:{
         type:String
     },
-    GiaThue:{
-        type:Number,
+    NhienLieu:{
+        type:String,
         required:true
     },
     MoTa:{
         type:String,
     },
-    MauXe:{
-        type:String
+    SoTien:{
+        type:Number,
+        required:true
     },
     HinhAnh:{
-        type:String
-    }
-})
-const KhachHangSchema=new mongoose.Schema({
-    TenTaiKhoan:{
         type:String,
-        required:true
-    },
-    MatKhau:{
-        type:String,
-        required:true
-    },
-    Ten:{
-        type:String,
-        required:true
-    },
-    GioiTinh:{
-        type:Boolean,
-        required:true
-    },
-    DiaChi:{
-        type:String,
-        required:true
-    },
-    SoDienThoai:{
-        type:String,
-        required:true
-    },
-    CCCD:{
-        type:String,
-        required:true
-    },
-    BangLaiXe:{
-        type:String
-    }
-})
-const SoXeSchema=new mongoose.Schema({
-    KhachHang:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"KhachHang"
-    },
-    Xe:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Xe"
-    },
-    NgayThueXe:{
-        type:Date,
-        required:true
-    },
-    NgayTraXe:{
-        type:Date,
-        required:true
-    },
-    GiaThue:{
-        type:Number
-    },
-    NgayKiHopDong:{
-        type:Date,
         required:true
     },
     TinhTrang:{
         type:String,
+        required:true,
+    },
+    IDDon:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"SoXe"
+    }
+})
+const KhachHangSchema=new mongoose.Schema({
+    IDKH:{
+        type:String,
         required:true
-
+    },
+    TenKH:{
+        type:String,
+        required:true
+    },
+    NgaySinh:{
+        type:Date,
+        required:true
+    },
+    DiaChi:{
+        type:Boolean,
+        required:true
+    },
+    SoDienThoai:{
+        type:String,
+        required:true
+    },
+    CMND:{
+        type:String,
+        required:true
+    },
+    HinhCmND:{
+        type:String,
+        required:true
+    },
+    BangLai:{
+        type:String
+    },
+    HinhBangLai:{
+        type:String
+    }
+})
+const SoXeSchema=new mongoose.Schema({
+    IDDon:{
+        type:String,
+        require:true,
+    },
+    NgayBatDau:{
+        type:Date,
+        required:true
+    },
+    NgayKetThuc:{
+        type:Date,
+        required:true
+    },
+    TinhTrang:{
+        type:String
+    },
+    IDXe:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Xe"
+    },
+    IDKH:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"KhachHang"
     },
 })
-const QuanLiSchema=new mongoose.Schema({
+
+const TaiKhoanSchema=new mongoose.Schema({
     TenTaiKhoan:{
         type:String,
         required:true
@@ -103,12 +116,34 @@ const QuanLiSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    Ten:{
+    ChucVu:{
         type:String,
         required:true
     },
-    GioiTinh:{
-        type:Boolean,
+    IDKH:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"KhachHang"
+    },
+    IDNV:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"NhanVien"
+    },
+})
+const NhanVienSchema = new mongoose.Schema({
+    TenTaiKhoan:{
+        type:String,
+        required:true
+    },
+    Avatar:{
+        type:String,
+        required:true
+    },
+    TenNV:{
+        type:String,
+        required:true
+    },
+    NgaySinh:{
+        type:Date,
         required:true
     },
     DiaChi:{
@@ -119,43 +154,20 @@ const QuanLiSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    CCCD:{
+    CMND:{
         type:String,
         required:true
     },
-    BangLaiXe:{
-        type:String
-    }
+    HinhCMND:{
+        type:String,
+        required:true
+    },
 })
 
-const SoDatXeSchema=new mongoose.Schema({
-    MaSo:{
-        type:String,
-        required:true
-    },
-    KhachHang:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"KhachHang"
-    },
-    Xe:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Xe"
-    },
-    NgayThueXe:{
-        type:String,
-        required:true
-    },
-    NgayTraXe:{
-        type:String,
-        required:true
-    },
-    GiaThue:{
-        type:Number
-    },
-})
-let QuanLi=mongoose.model("QuanLi",QuanLiSchema);
+
+let NhanVien=mongoose.model("NhanVien",NhanVienSchema);
 let Xe=mongoose.model("Xe",XeSchema);
 let KhachHang=mongoose.model("KhachHang",KhachHangSchema);
 let SoXe=mongoose.model("SoXe",SoXeSchema);
-let SoDatXe=mongoose.model("SoDatXe",SoDatXeSchema);
-module.exports={Xe,QuanLi,KhachHang,SoXe,SoDatXe};
+let TaiKhoan=mongoose.model("TaiKhoan",TaiKhoanSchema);
+module.exports={Xe,NhanVien,KhachHang,SoXe,TaiKhoan};
