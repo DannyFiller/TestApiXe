@@ -55,7 +55,7 @@ const KhachHangSchema=new mongoose.Schema({
         required:true
     },
     NgaySinh:{
-        type:Date,
+        type:Number,
         required:true
     },
     DiaChi:{
@@ -87,11 +87,11 @@ const SoXeSchema=new mongoose.Schema({
         require:true,
     },
     NgayBatDau:{
-        type:Date,
+        type:Number,
         required:true
     },
     NgayKetThuc:{
-        type:Date,
+        type:Number,
         required:true
     },
     TinhTrang:{
@@ -143,7 +143,7 @@ const NhanVienSchema = new mongoose.Schema({
         required:true
     },
     NgaySinh:{
-        type:Date,
+        type:Number,
         required:true
     },
     DiaChi:{
