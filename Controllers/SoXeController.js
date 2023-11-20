@@ -12,7 +12,7 @@ const SoXeController={
     },
     getAllSoXe:async(req,res)=>{
         try{
-            const SoXes=await SoXe.find().populate(["KhachHang","Xe"]); //pupulate lấy tất các thông khách hàng và xe
+            const SoXes=await SoXe.find({TinhTrang:"Đã xác nhận"}).populate(["IDKH","IDXe"]); //pupulate lấy tất các thông khách hàng và xe
             res.status(200).json(SoXes);
         }catch(err){
             res.status(500).json(err);
