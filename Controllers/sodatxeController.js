@@ -1,5 +1,5 @@
 const {json} = require("body-parser");
-const {SoDatXe} = require("../model/model");
+const {SoXe} = require("../model/model");
 
 
 const sodatxeController = {
@@ -14,21 +14,28 @@ const sodatxeController = {
         }
     },
     //lấy hết tất cả sổ xe
-    getAllSo : async(req,res) =>{
-        try {
-            const getSo = await SoDatXe.find();
-            res.status(200).json(getSo);
-        } catch (error) {
-            res.status(500).json(error);
+    getAllSo:async(req,res)=>{
+        try{
+            const SoXes=await SoXe.find().populate(["IDKH","IDXe"]); //pupulate lấy tất các thông khách hàng và xe
+            res.status(200).json(SoXes);
+        }catch(err){
+            res.status(500).json(err);
         }
     },
-
+    getAllDatXe:async(req,res)=>{
+        try{
+            const SoXes=await SoXe.find({TinhTrang:"Chưa xác nhận"}).populate(["IDKH","IDXe"]); //pupulate lấy tất các thông khách hàng và xe
+            res.status(200).json(SoXes);
+        }catch(err){
+            res.status(500).json(err);
+        }
+    },
     //Sửa thông sổ
     editSo : async(req,res) =>{
         try {
             const idSoDatXe = req.params.id;
             const{MaSo,BienSoXe,TenTaiKhoan,NgayThueXe,NgayTraXe,GiaThueXe,HinhAnh} = req.body;
-            const updateSo = await SoDatXe.findByIdAndUpdate(idSoDatXe,{MaSo,BienSoXe,TenTaiKhoan,NgayThueXe,NgayTraXe,GiaThueXe,HinhAnh},{new : true});
+            const updateSo = await SoXe.findByIdAndUpdate(idSoDatXe,{MaSo,BienSoXe,TenTaiKhoan,NgayThueXe,NgayTraXe,GiaThueXe,HinhAnh},{new : true});
             res.status(200).json(updateSo);
         } catch (error) {
             res.status(500).json(error);
