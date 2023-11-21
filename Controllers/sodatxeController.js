@@ -31,15 +31,14 @@ const sodatxeController = {
         }
     },
     //Sửa thông sổ
-    editSo : async(req,res) =>{
-        try {
-            const idSoDatXe = req.params.id;
-            const{MaSo,BienSoXe,TenTaiKhoan,NgayThueXe,NgayTraXe,GiaThueXe,HinhAnh} = req.body;
-            const updateSo = await SoXe.findByIdAndUpdate(idSoDatXe,{MaSo,BienSoXe,TenTaiKhoan,NgayThueXe,NgayTraXe,GiaThueXe,HinhAnh},{new : true});
-            res.status(200).json(updateSo);
-        } catch (error) {
-            res.status(500).json(error);
-        }
+    editSo:async(req,res)=>{
+        try{
+            const editxe=await SoDatXe.findById(req.params.id);
+            await editxe.updateOne({$set:req.body});
+            res.status(200).json("updateSuccess");
+        }catch(err){
+            res.status(500).json(err);
+        }    
     },
 
     //Xóa thông tin sổ
