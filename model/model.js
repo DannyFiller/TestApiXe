@@ -59,7 +59,7 @@ const KhachHangSchema=new mongoose.Schema({
         required:true
     },
     DiaChi:{
-        type:Boolean,
+        type:String,
         required:true
     },
     SoDienThoai:{
@@ -135,8 +135,7 @@ const NhanVienSchema = new mongoose.Schema({
         required:true
     },
     Avatar:{
-        type:String,
-        required:true
+        type:String
     },
     TenNV:{
         type:String,
