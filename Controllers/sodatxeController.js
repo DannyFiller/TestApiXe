@@ -45,7 +45,7 @@ const sodatxeController = {
     //Xóa thông tin sổ
     deleteSo : async(req,res) =>{
         try {
-            const xoaSoDatXe = await SoDatXe.findByIdAndDelete(req.params.id);
+            const xoaSoDatXe = await SoXe.findByIdAndDelete(req.params.id);
             res.status(200).json(xoaSoDatXe);
         } catch (error) {
             
