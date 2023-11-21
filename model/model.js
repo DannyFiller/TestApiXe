@@ -70,7 +70,7 @@ const KhachHangSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    HinhCmND:{
+    HinhCMND:{
         type:String,
         required:true
     },
