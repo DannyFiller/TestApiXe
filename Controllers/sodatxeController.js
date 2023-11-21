@@ -33,7 +33,7 @@ const sodatxeController = {
     //Sửa thông sổ
     editSo:async(req,res)=>{
         try{
-            const editxe=await SoDatXe.findById(req.params.id);
+            const editxe=await SoXe.findById(req.params.id);
             await editxe.updateOne({$set:req.body});
             res.status(200).json("updateSuccess");
         }catch(err){
