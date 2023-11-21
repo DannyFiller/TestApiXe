@@ -18,6 +18,14 @@ const KhachHangController={
             res.status(500).json(err);
         }
     },
+    getKhachHang:async(req,res)=>{
+        try{
+            const SoXes=await KhachHang.findById(req.params.id);
+            res.status(200).json(SoXes);
+        }catch(err){
+            res.status(500).json(err);
+        }
+    },
     updateKhachHang:async(req,res)=>{
         try{
             const kh=await KhachHang.findById(req.params.id);
