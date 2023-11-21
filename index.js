@@ -13,7 +13,8 @@ const SoDatXeRouter = require("./Routes/sodatxe");
 const soXeRoutes=require("./Routes/SoXe");
 const KhachHang=require("./Routes/KhachHang");
 const LoaiXe=require("./Routes/LoaiXe");
-const LichSuDatXe=require("./Routes/LichSuDatXe")
+const LichSuDatXe=require("./Routes/LichSuDatXe");
+const TaiKhoan=require("./Routes/TaiKhoan")
 
 dotenv.config();
 
@@ -44,6 +45,7 @@ app.use("/SoXe",soXeRoutes);
 app.use("/LoaiXe",LoaiXe);
 app.use("/SoDatXe",SoDatXeRouter);
 app.use("/LichSuDatXe",LichSuDatXe);
+app.use("/TaiKhoan",TaiKhoan);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running");
