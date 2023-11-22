@@ -5,4 +5,5 @@ router.post("/",TaiKhoan.addTK);
 router.put("/:id",TaiKhoan.updateTK);
 router.get("/GetTKKH/:TenTaiKhoan",TaiKhoan.getTKKhachHang);
 router.get("/GetTKNV/:TenTaiKhoan",TaiKhoan.getTKNhanVien);
+router.get("/",TaiKhoan.getAllTK);
 module.exports=router;
