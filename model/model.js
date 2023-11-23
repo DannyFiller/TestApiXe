@@ -72,7 +72,6 @@ const KhachHangSchema=new mongoose.Schema({
     },
     HinhCMND:{
         type:String,
-        required:true
     },
     BangLai:{
         type:String
@@ -84,7 +83,6 @@ const KhachHangSchema=new mongoose.Schema({
 const SoXeSchema=new mongoose.Schema({
     IDDon:{
         type:String,
-        require:true,
     },
     NgayBatDau:{
         type:Number,
