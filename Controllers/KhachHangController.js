@@ -26,6 +26,14 @@ const KhachHangController={
             res.status(500).json(err);
         }
     },
+    getByCMND:async(req,res)=>{
+        try{
+            const SoXes=await KhachHang.find({CMND:req.params.CMND});
+            res.status(200).json(SoXes);
+        }catch(err){
+            res.status(500).json(err);
+        }
+    },
     updateKhachHang:async(req,res)=>{
         try{
             const kh=await KhachHang.findById(req.params.id);
