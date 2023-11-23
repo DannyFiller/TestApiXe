@@ -13,7 +13,7 @@ const SoXeController={
     getAllSoXe:async(req,res)=>{
         try{
             const SoXes = await SoXe.find({
-                $or: [{ TinhTrang: "Hoàn Thành" }, { TinhTrang: "Hoạt động" }]
+                $or: [{ TinhTrang: "Hoàn thành" }, { TinhTrang: "Hoạt động" }]
               }).populate(["IDKH", "IDXe"]); //pupulate lấy tất các thông khách hàng và xe
             res.status(200).json(SoXes);
         }catch(err){
