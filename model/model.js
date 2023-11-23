@@ -48,7 +48,6 @@ const XeSchema=new mongoose.Schema(
 const KhachHangSchema=new mongoose.Schema({
     IDKH:{
         type:String,
-        required:true
     },
     TenKH:{
         type:String,
