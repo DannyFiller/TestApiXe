@@ -47,7 +47,7 @@ app.use("/LoaiXe",LoaiXe);
 app.use("/SoDatXe",SoDatXeRouter);
 app.use("/LichSuDatXe",LichSuDatXe);
 app.use("/TaiKhoan",TaiKhoan);
-app.use("/TaiKhoan",TaiKhoan);
+app.use("/PhanLoai",PhanLoai);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running");
